@@ -7,7 +7,6 @@ from django.http import HttpResponseRedirect
 def master(request):
     languages = {'languages': ProgramLanguage.objects.order_by('id')}
     return render(request, 'list.html', languages)
-    #return HttpResponse('Hello!')
 
 
 def detail(request, lang_id):
