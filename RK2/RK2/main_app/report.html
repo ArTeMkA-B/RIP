@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Ученики
+{% endblock %}
+
+{% block content %}
+<h2>Список всех учеников:</h2>
+<ul>
+    {% for stud in students %}
+        <hr>
+        <li>
+            <div>
+                ФИО: {{stud.first_name}} {{stud.last_name}} <br>
+                Возраст: {{stud.age}} лет <br>
+                Класс: {{stud.id_class.number}}{{stud.id_class.letter}}
+            </div>
+        </li>
+    {% endfor %}
+    <hr>
+</ul>
+<i>Время формирования отчёта: </i>{{date}}
+{% endblock %}
